@@ -1,0 +1,2 @@
+# Don't upload the entire node_modules folder every time
+node_modules/
