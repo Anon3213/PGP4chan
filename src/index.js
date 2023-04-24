@@ -26,7 +26,7 @@ import * as openpgp from './openpgp.min.js'; // Remove from final script
         for (let i = 0; i < replies.length; i++) {
             const reply = replies[i].textContent;
             if (pgpRegex.test(reply)) {
-                const pgpMessage = pgpRegex.exec(reply)?.toString();
+                const pgpMessage = pgpRegex.exec(reply)?.toString(); // Optional chaining
                 // Reformatting the raw text from a post back into the correct PGP message format including '\n's
                 const formattedMessage = pgpMessage.slice(0, 27) + '\n\n' + pgpMessage.slice(27, -25) + '\n' + pgpMessage.slice(-25);
                 const { readMessage, decrypt } = openpgp;
